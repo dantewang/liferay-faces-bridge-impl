@@ -20,13 +20,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.faces.component.UIComponent;
-import javax.faces.context.ExternalContext;
-import javax.faces.context.FacesContext;
-import javax.faces.context.ResponseWriter;
-import javax.faces.render.Renderer;
-import javax.faces.render.RendererWrapper;
-import javax.portlet.faces.component.PortletNamingContainerUIViewRoot;
+import jakarta.faces.component.UIComponent;
+import jakarta.faces.context.ExternalContext;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.context.ResponseWriter;
+import jakarta.faces.render.Renderer;
+import jakarta.faces.render.RendererWrapper;
+import jakarta.portlet.faces.component.PortletNamingContainerUIViewRoot;
 
 import com.liferay.faces.util.application.ResourceUtil;
 import com.liferay.faces.util.product.Product;
@@ -103,8 +103,6 @@ public class BodyRendererBridgeImpl extends RendererWrapper {
 		if (headResourcesToRenderInBody != null) {
 
 			ExternalContext externalContext = facesContext.getExternalContext();
-			final Product BOOTSFACES = ProductFactory.getProductInstance(externalContext, Product.Name.BOOTSFACES);
-			final boolean BOOTSFACES_DETECTED = BOOTSFACES.isDetected();
 
 			for (UIComponent headResource : headResourcesToRenderInBody) {
 
@@ -115,7 +113,7 @@ public class BodyRendererBridgeImpl extends RendererWrapper {
 				// (and reloaded if necessary), we do not need to track them when they are rendered to the body section.
 				// However, scripts cannot be unloaded, so relocated scripts rendered in the body section must be
 				// tracked as if they were rendered in the <head> section so that they are not loaded multiple times.
-				if (RenderKitUtil.isScriptResource(headResource, BOOTSFACES_DETECTED)) {
+				if (RenderKitUtil.isScriptResource(headResource)) {
 					headResourceIds.add(ResourceUtil.getResourceId(headResource));
 				}
 			}

@@ -20,17 +20,17 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import javax.faces.FacesWrapper;
-import javax.faces.component.UIComponent;
-import javax.faces.component.UIInput;
-import javax.faces.context.FacesContext;
-import javax.faces.convert.ConverterException;
-import javax.faces.event.AbortProcessingException;
-import javax.faces.event.FacesEvent;
-import javax.faces.event.FacesListener;
-import javax.faces.event.ValueChangeListener;
-import javax.faces.render.Renderer;
-import javax.faces.validator.Validator;
+import jakarta.faces.FacesWrapper;
+import jakarta.faces.component.UIComponent;
+import jakarta.faces.component.UIInput;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.convert.ConverterException;
+import jakarta.faces.event.AbortProcessingException;
+import jakarta.faces.event.FacesEvent;
+import jakarta.faces.event.FacesListener;
+import jakarta.faces.event.ValueChangeListener;
+import jakarta.faces.render.Renderer;
+import jakarta.faces.validator.Validator;
 
 
 /**
@@ -173,32 +173,13 @@ public abstract class UIInputWrapper extends UIInput implements FacesWrapper<UII
 	}
 
 	@Override
-	@SuppressWarnings("deprecation")
-	public javax.faces.el.MethodBinding getValidator() {
-		return getWrapped().getValidator();
-	}
-
-	@Override
 	public String getValidatorMessage() {
 		return getWrapped().getValidatorMessage();
 	}
 
 	@Override
 	public Validator[] getValidators() {
-
 		return getWrapped().getValidators();
-	}
-
-	@Override
-	@SuppressWarnings("deprecation")
-	public javax.faces.el.ValueBinding getValueBinding(String name) {
-		return getWrapped().getValueBinding(name);
-	}
-
-	@Override
-	@SuppressWarnings("deprecation")
-	public javax.faces.el.MethodBinding getValueChangeListener() {
-		return getWrapped().getValueChangeListener();
 	}
 
 	@Override
@@ -371,12 +352,6 @@ public abstract class UIInputWrapper extends UIInput implements FacesWrapper<UII
 	}
 
 	@Override
-	@SuppressWarnings("deprecation")
-	public void setValidator(javax.faces.el.MethodBinding validatorBinding) {
-		getWrapped().setValidator(validatorBinding);
-	}
-
-	@Override
 	public void setValidatorMessage(String message) {
 		getWrapped().setValidatorMessage(message);
 	}
@@ -384,18 +359,6 @@ public abstract class UIInputWrapper extends UIInput implements FacesWrapper<UII
 	@Override
 	public void setValue(Object value) {
 		getWrapped().setValue(value);
-	}
-
-	@Override
-	@SuppressWarnings("deprecation")
-	public void setValueBinding(String name, javax.faces.el.ValueBinding binding) {
-		getWrapped().setValueBinding(name, binding);
-	}
-
-	@Override
-	@SuppressWarnings("deprecation")
-	public void setValueChangeListener(javax.faces.el.MethodBinding valueChangeListener) {
-		getWrapped().setValueChangeListener(valueChangeListener);
 	}
 
 	@Override

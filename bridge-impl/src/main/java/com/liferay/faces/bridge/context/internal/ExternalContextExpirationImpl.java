@@ -25,10 +25,10 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-import javax.faces.context.ExternalContext;
-import javax.portlet.PortletContext;
-import javax.portlet.faces.BridgeFactoryFinder;
-import javax.servlet.ServletContext;
+import jakarta.faces.context.ExternalContext;
+import jakarta.portlet.PortletContext;
+import jakarta.portlet.faces.BridgeFactoryFinder;
+import jakarta.servlet.ServletContext;
 
 import com.liferay.faces.bridge.context.map.internal.ContextMapFactory;
 
@@ -224,5 +224,9 @@ public class ExternalContextExpirationImpl extends ExternalContextExpirationComp
 	@Override
 	public void redirect(String url) throws IOException {
 		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void release() {
 	}
 }

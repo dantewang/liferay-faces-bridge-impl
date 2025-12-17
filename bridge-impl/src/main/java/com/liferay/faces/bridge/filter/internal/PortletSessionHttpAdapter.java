@@ -18,11 +18,10 @@ package com.liferay.faces.bridge.filter.internal;
 import java.util.Enumeration;
 import java.util.Map;
 
-import javax.portlet.PortletContext;
-import javax.portlet.PortletSession;
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpSessionContext;
+import jakarta.portlet.PortletContext;
+import jakarta.portlet.PortletSession;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.HttpSession;
 
 
 /**
@@ -101,21 +100,6 @@ public class PortletSessionHttpAdapter implements PortletSession, HttpSession {
 	}
 
 	@Override
-	public HttpSessionContext getSessionContext() {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
-	public Object getValue(String name) {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
-	public String[] getValueNames() {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
 	public void invalidate() {
 		wrappedPortletSession.invalidate();
 	}
@@ -126,11 +110,6 @@ public class PortletSessionHttpAdapter implements PortletSession, HttpSession {
 	}
 
 	@Override
-	public void putValue(String name, Object value) {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
 	public void removeAttribute(String name) {
 		wrappedPortletSession.removeAttribute(name);
 	}
@@ -138,11 +117,6 @@ public class PortletSessionHttpAdapter implements PortletSession, HttpSession {
 	@Override
 	public void removeAttribute(String name, int scope) {
 		wrappedPortletSession.removeAttribute(name, scope);
-	}
-
-	@Override
-	public void removeValue(String name) {
-		throw new UnsupportedOperationException();
 	}
 
 	@Override

@@ -23,17 +23,17 @@ import java.util.EventListener;
 import java.util.Map;
 import java.util.Set;
 
-import javax.portlet.PortletContext;
-import javax.servlet.Filter;
-import javax.servlet.FilterRegistration;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.Servlet;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRegistration;
-import javax.servlet.SessionCookieConfig;
-import javax.servlet.SessionTrackingMode;
-import javax.servlet.descriptor.JspConfigDescriptor;
+import jakarta.portlet.PortletContext;
+import jakarta.servlet.Filter;
+import jakarta.servlet.FilterRegistration;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.Servlet;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRegistration;
+import jakarta.servlet.SessionCookieConfig;
+import jakarta.servlet.SessionTrackingMode;
+import jakarta.servlet.descriptor.JspConfigDescriptor;
 
 import com.liferay.faces.bridge.util.internal.TCCLUtil;
 
@@ -92,6 +92,11 @@ public final class ServletContextFileUploadAdapterImpl implements ServletContext
 
 	@Override
 	public ServletRegistration.Dynamic addServlet(String servletName, Class<? extends Servlet> servletClass) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public ServletRegistration.Dynamic addJspFile(String s, String s1) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -236,18 +241,8 @@ public final class ServletContextFileUploadAdapterImpl implements ServletContext
 	}
 
 	@Override
-	public Servlet getServlet(String name) throws ServletException {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
 	public String getServletContextName() {
 		return portletContext.getPortletContextName();
-	}
-
-	@Override
-	public Enumeration<String> getServletNames() {
-		throw new UnsupportedOperationException();
 	}
 
 	@Override
@@ -261,16 +256,41 @@ public final class ServletContextFileUploadAdapterImpl implements ServletContext
 	}
 
 	@Override
-	public Enumeration<Servlet> getServlets() {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
 	public SessionCookieConfig getSessionCookieConfig() {
 		throw new UnsupportedOperationException();
 	}
 
 	public String getVirtualServerName() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public int getSessionTimeout() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void setSessionTimeout(int i) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public String getRequestCharacterEncoding() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void setRequestCharacterEncoding(String s) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public String getResponseCharacterEncoding() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void setResponseCharacterEncoding(String s) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -282,11 +302,6 @@ public final class ServletContextFileUploadAdapterImpl implements ServletContext
 	@Override
 	public void log(String message, Throwable throwable) {
 		portletContext.log(message, throwable);
-	}
-
-	@Override
-	public void log(Exception exception, String msg) {
-		portletContext.log(msg, exception);
 	}
 
 	@Override

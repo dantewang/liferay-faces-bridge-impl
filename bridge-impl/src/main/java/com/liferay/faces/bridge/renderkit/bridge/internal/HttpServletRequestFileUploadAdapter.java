@@ -30,23 +30,25 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.faces.context.ExternalContext;
-import javax.portlet.ClientDataRequest;
-import javax.portlet.PortletContext;
-import javax.portlet.PortletException;
-import javax.portlet.filter.PortletRequestWrapper;
-import javax.servlet.AsyncContext;
-import javax.servlet.DispatcherType;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.ServletInputStream;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.servlet.http.Part;
+import jakarta.faces.context.ExternalContext;
+import jakarta.portlet.ClientDataRequest;
+import jakarta.portlet.PortletContext;
+import jakarta.portlet.PortletException;
+import jakarta.portlet.filter.PortletRequestWrapper;
+import jakarta.servlet.AsyncContext;
+import jakarta.servlet.DispatcherType;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletConnection;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletInputStream;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpUpgradeHandler;
+import jakarta.servlet.http.Part;
 
 import com.liferay.faces.bridge.model.UploadedFile;
 import com.liferay.faces.util.logging.Logger;
@@ -170,6 +172,21 @@ public final class HttpServletRequestFileUploadAdapter extends PortletRequestWra
 	}
 
 	@Override
+	public String getRequestId() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public String getProtocolRequestId() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public ServletConnection getServletConnection() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
 	public String getHeader(String name) {
 
 		Map<String, String> requestHeaderMap = getRequestHeaderMap(externalContext, false);
@@ -251,6 +268,11 @@ public final class HttpServletRequestFileUploadAdapter extends PortletRequestWra
 		}
 
 		return part;
+	}
+
+	@Override
+	public <T extends HttpUpgradeHandler> T upgrade(Class<T> aClass) throws IOException, ServletException {
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
@@ -358,11 +380,6 @@ public final class HttpServletRequestFileUploadAdapter extends PortletRequestWra
 	}
 
 	@Override
-	public String getRealPath(String path) {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
 	public String getRemoteAddr() {
 		throw new UnsupportedOperationException();
 	}
@@ -408,6 +425,11 @@ public final class HttpServletRequestFileUploadAdapter extends PortletRequestWra
 	}
 
 	@Override
+	public String changeSessionId() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
 	public HttpSession getSession(boolean create) {
 		throw new UnsupportedOperationException();
 	}
@@ -429,11 +451,6 @@ public final class HttpServletRequestFileUploadAdapter extends PortletRequestWra
 
 	@Override
 	public boolean isRequestedSessionIdFromURL() {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
-	public boolean isRequestedSessionIdFromUrl() {
 		throw new UnsupportedOperationException();
 	}
 

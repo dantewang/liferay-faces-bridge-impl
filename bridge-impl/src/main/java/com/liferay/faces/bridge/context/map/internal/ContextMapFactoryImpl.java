@@ -22,17 +22,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.faces.context.ExternalContext;
-import javax.faces.context.ExternalContextWrapper;
-import javax.faces.webapp.FacesServlet;
-import javax.portlet.ClientDataRequest;
-import javax.portlet.PortalContext;
-import javax.portlet.PortletConfig;
-import javax.portlet.PortletContext;
-import javax.portlet.PortletRequest;
-import javax.portlet.PortletSession;
-import javax.portlet.faces.BridgeFactoryFinder;
-import javax.servlet.ServletContext;
+import jakarta.faces.context.ExternalContext;
+import jakarta.faces.context.ExternalContextWrapper;
+import jakarta.faces.webapp.FacesServlet;
+import jakarta.portlet.ClientDataRequest;
+import jakarta.portlet.PortalContext;
+import jakarta.portlet.PortletConfig;
+import jakarta.portlet.PortletContext;
+import jakarta.portlet.PortletRequest;
+import jakarta.portlet.PortletSession;
+import jakarta.portlet.faces.BridgeFactoryFinder;
+import jakarta.servlet.ServletContext;
 
 import com.liferay.faces.bridge.internal.PortletConfigParam;
 import com.liferay.faces.bridge.model.UploadedFile;
@@ -203,14 +203,11 @@ public class ContextMapFactoryImpl extends ContextMapFactoryCompatImpl {
 			ClientDataRequest clientDataRequest = (ClientDataRequest) portletRequest;
 			String contentType = clientDataRequest.getContentType();
 
-			// Note: af:inputFile (ADF Faces) ace:fileEntry (ICEfaces) rely on their own mechanisms for handling file
-			// uploads.
 			ProductFactory productFactory = (ProductFactory) BridgeFactoryFinder.getFactory(portletContext,
 					ProductFactory.class);
-			Product ADF_FACES_RICH_CLIENT = productFactory.getProductInfo(Product.Name.ADF_FACES);
-			Product ICEFACES = productFactory.getProductInfo(Product.Name.ICEFACES);
+			
 
-			if (!ADF_FACES_RICH_CLIENT.isDetected() && !ICEFACES.isDetected() && (contentType != null) &&
+			if ((contentType != null) &&
 					contentType.toLowerCase().startsWith("multipart/")) {
 
 				MultiPartFormData multiPartFormData = (MultiPartFormData) portletRequest.getAttribute(

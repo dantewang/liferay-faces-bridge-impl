@@ -17,9 +17,9 @@ package com.liferay.faces.bridge.renderkit.html_basic.internal;
 
 import java.util.Iterator;
 
-import javax.faces.context.FacesContext;
-import javax.faces.render.RenderKit;
-import javax.faces.render.RenderKitFactory;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.render.RenderKit;
+import jakarta.faces.render.RenderKitFactory;
 
 import com.liferay.faces.util.application.ApplicationUtil;
 import com.liferay.faces.util.context.FacesRequestContext;
@@ -29,7 +29,7 @@ import com.liferay.faces.util.context.FacesRequestContext;
  * <p>Since liferay-faces-bridge-impl.jar!META-INF/faces-config.xml specifies ordering <code>
  * &lt;after&gt;&lt;name&gt;LiferayFacesUtil&lt;/name&gt;&lt;/after&gt;&lt;before&gt;&lt;others/&gt;&lt;/before&gt;</code>
  * , the factories in this module can only decorate those provided by liferay-faces-util.jar and the JSF implementation.
- * As a result, factories registered by Non-Liferay/3rd-Party component suites like ICEfaces, PrimeFaces, and RichFaces
+ * As a result, factories registered by Non-Liferay/3rd-Party component suites like PrimeFaces
  * will end up decorating the factories registered by this module.</p>
  *
  * <p>However, in order to ensure that scripts contained in {@link FacesRequestContext#getScripts()} are encoded before

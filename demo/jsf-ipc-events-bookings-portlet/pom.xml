@@ -28,16 +28,16 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>javax.annotation</groupId>
-			<artifactId>javax.annotation-api</artifactId>
+			<groupId>jakarta.annotation</groupId>
+			<artifactId>jakarta.annotation-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>javax.el</groupId>
-			<artifactId>javax.el-api</artifactId>
+			<groupId>jakarta.el</groupId>
+			<artifactId>jakarta.el-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>javax.portlet</groupId>
-			<artifactId>portlet-api</artifactId>
+			<groupId>com.liferay.jakarta.portlet</groupId>
+			<artifactId>com.liferay.jakarta.portlet-api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.liferay.faces</groupId>

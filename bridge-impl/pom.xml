@@ -51,7 +51,6 @@
 								com.liferay.faces.bridge.client.internal,\
 								com.liferay.faces.bridge.component.behavior.internal,\
 								com.liferay.faces.bridge.component.html.internal,\
-								com.liferay.faces.bridge.component.inputfile.internal,\
 								com.liferay.faces.bridge.component.internal,\
 								com.liferay.faces.bridge.component.visit.internal,\
 								com.liferay.faces.bridge.context.internal,\
@@ -64,32 +63,30 @@
 								com.liferay.faces.bridge.internal,\
 								com.liferay.faces.bridge.renderkit.html_basic.internal,\
 								com.liferay.faces.bridge.scope.internal
-							# javax.el is automatically imported with the following versions:
-							# javax.el;version="[2.2.0,3.0.0)", but versions 3.0.0+ are also valid.
-							# javax.enterprise.context is automatically imported with the following versions:
-							# javax.enterprise.context;version="[1.1.0,2.0.0)" because of the CDI 1.2 API
+							# jakarta.el is automatically imported with the following versions:
+							# jakarta.el;version="[2.2.0,3.0.0)", but versions 3.0.0+ are also valid.
+							# jakarta.enterprise.context is automatically imported with the following versions:
+							# jakarta.enterprise.context;version="[1.1.0,2.0.0)" because of the CDI 1.2 API
 							# compile-time dependency. Need to compile against 1.2 since the CDI 2.0 API is
 							# compiled with JDK8. Need to require 2.0+ at run-time for Portlet 3.0
 							# Java EE 7 compatibility.
 							Import-Package: \
-								javax.el;version="[2.2.0,4.0.0)",\
-								javax.enterprise.context;version="[2.0.0,3.0.0)",\
-								javax.enterprise.context.spi;version="[2.0.0,3.0.0)",\
-								javax.enterprise.event;version="[2.0.0,3.0.0)",\
-								javax.enterprise.inject;version="[2.0.0,3.0.0)",\
-								javax.enterprise.inject.spi;version="[2.0.0,3.0.0)",\
-								javax.enterprise.util;version="[1.1.0,3.0.0)",\
-								com.liferay.faces.util.*;version="[4.0.0,5.0.0)",\
-								com.liferay.faces.bridge.*;version="[6.0.0,7.0.0)",\
-								com.liferay.faces.portlet.*;version="[6.0.0,7.0.0)",\
-								javax.portlet;version="[3.0.0,4.0.0)",\
-								javax.portlet.faces.*;version="[6.0.0,7.0.0)",\
-								org.icefaces.ace.component.fileentry.*;resolution:=optional,\
+								jakarta.el;version="[2.2.0,6.0.0)",\
+								jakarta.enterprise.context;version="[2.0.0,5.0.0)",\
+								jakarta.enterprise.context.spi;version="[2.0.0,5.0.0)",\
+								jakarta.enterprise.event;version="[2.0.0,5.0.0)",\
+								jakarta.enterprise.inject;version="[2.0.0,5.0.0)",\
+								jakarta.enterprise.inject.spi;version="[2.0.0,5.0.0)",\
+								jakarta.enterprise.util;version="[1.1.0,5.0.0)",\
+								com.liferay.faces.util.*;version="[4.0.0,6.0.0)",\
+								com.liferay.faces.bridge.*;version="[6.0.0,8.0.0)",\
+								jakarta.portlet;version="[3.0.0,5.0.0)",\
+								jakarta.portlet.faces.*;version="[6.0.0,8.0.0)",\
 								*
 							Require-Capability: osgi.extender; filter:="(osgi.extender=osgi.serviceloader.registrar)"
 							Provide-Capability: \
-								osgi.serviceloader;osgi.serviceloader=javax.portlet.faces.Bridge,\
-								osgi.serviceloader;osgi.serviceloader=javax.portlet.faces.BridgeFactoryFinder,\
+								osgi.serviceloader;osgi.serviceloader=jakarta.portlet.faces.Bridge,\
+								osgi.serviceloader;osgi.serviceloader=jakarta.portlet.faces.BridgeFactoryFinder,\
 								osgi.extender;osgi.extender="jsp.taglib";uri="http://liferay.com/faces/bridge";\
 								version:Version="1.0.0"
 						]]>
@@ -136,49 +133,67 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>javax.annotation</groupId>
-			<artifactId>javax.annotation-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>javax.el</groupId>
-			<artifactId>javax.el-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>javax.enterprise</groupId>
-			<artifactId>cdi-api</artifactId>
-			<optional>true</optional>
+			<groupId>jakarta.annotation</groupId>
+			<artifactId>jakarta.annotation-api</artifactId>
+			<version>2.1.1</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>javax.faces</groupId>
-			<artifactId>javax.faces-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>javax.portlet</groupId>
-			<artifactId>portlet-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>javax.servlet.jsp-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.icefaces</groupId>
-			<artifactId>icefaces-ace</artifactId>
+			<groupId>jakarta.el</groupId>
+			<artifactId>jakarta.el-api</artifactId>
+			<version>5.0.1</version>
 			<scope>provided</scope>
-			<optional>true</optional>
+		</dependency>
+		<dependency>
+		    <groupId>jakarta.enterprise</groupId>
+		    <artifactId>jakarta.enterprise.cdi-api</artifactId>
+		    <version>4.1.0</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.faces</groupId>
+			<artifactId>jakarta.faces-api</artifactId>
+			<version>4.0.1</version>
+            <scope>provided</scope>
+		</dependency>
+        <dependency>
+            <groupId>com.liferay.jakarta.portlet</groupId>
+            <artifactId>com.liferay.jakarta.portlet-api</artifactId>
+            <version>4.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+		<dependency>
+			<groupId>jakarta.servlet.jsp</groupId>
+			<artifactId>jakarta.servlet.jsp-api</artifactId>
+			<version>3.1.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+			<version>6.0.0</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.osgi</groupId>
 			<artifactId>osgi.annotation</artifactId>
+			<version>6.0.1</version>
+			<scope>provided</scope>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+            <version>4.13.2</version>
 			<scope>test</scope>
+            <optional>true</optional>
+		</dependency>
+        <dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>jakarta.faces</artifactId>
+			<version>4.0.1</version>
+			<scope>test</scope>
+            <optional>true</optional>
 		</dependency>
 	</dependencies>
 
@@ -225,38 +240,6 @@
 								</configuration>
 							</execution>
 						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.codehaus.mojo</groupId>
-						<artifactId>exec-maven-plugin</artifactId>
-						<version>1.2.1</version>
-						<executions>
-							<execution>
-								<goals>
-									<goal>java</goal>
-								</goals>
-								<phase>generate-sources</phase>
-								<configuration>
-									<includeProjectDependencies>false</includeProjectDependencies>
-									<includePluginDependencies>true</includePluginDependencies>
-									<mainClass>com.liferay.faces.generator.Generator</mainClass>
-									<arguments>
-										<argument>${project.build.directory}/${short.namespace}-tags.xml</argument>
-									</arguments>
-									<executableDependency>
-										<groupId>com.liferay.faces</groupId>
-										<artifactId>com.liferay.faces.generator</artifactId>
-									</executableDependency>
-								</configuration>
-							</execution>
-						</executions>
-						<dependencies>
-							<dependency>
-								<groupId>com.liferay.faces</groupId>
-								<artifactId>com.liferay.faces.generator</artifactId>
-								<version>1.1.1</version>
-							</dependency>
-						</dependencies>
 					</plugin>
 				</plugins>
 			</build>

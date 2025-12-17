@@ -15,9 +15,9 @@
  */
 package com.liferay.faces.bridge.application.internal;
 
-import javax.faces.application.Resource;
-import javax.faces.application.ResourceHandler;
-import javax.faces.application.ResourceHandlerWrapper;
+import jakarta.faces.application.Resource;
+import jakarta.faces.application.ResourceHandler;
+import jakarta.faces.application.ResourceHandlerWrapper;
 
 
 /**
@@ -26,7 +26,7 @@ import javax.faces.application.ResourceHandlerWrapper;
  * faces-config.xml descriptor. Rather, it is created by the {@link ApplicationCompatImpl#getResourceHandler()} method.
  * It wraps resources with {@link Resource} instances that override the {@link Resource#getRequestPath()} method. This
  * provides the bridge with the opportunity to have the final authority regarding the format of resource URLs created by
- * ResourceHandlers like the ones provided by ICEfaces, PrimeFaces, and RichFaces.
+ * ResourceHandlers like the ones provided by PrimeFaces.
  *
  * @author  Neil Griffin
  */

@@ -19,11 +19,11 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.Locale;
 
-import javax.portlet.MimeResponse;
-import javax.portlet.filter.MimeResponseWrapper;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.portlet.MimeResponse;
+import jakarta.portlet.filter.MimeResponseWrapper;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 
 
 /**
@@ -85,22 +85,6 @@ public class MimeResponseHttpServletAdapter extends MimeResponseWrapper implemen
 	 */
 	@Override
 	public String encodeRedirectURL(String url) {
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * See {@link HttpServletResponse#encodeRedirectUrl(String)}
-	 */
-	@Override
-	public String encodeRedirectUrl(String url) {
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * See {@link HttpServletResponse#encodeUrl(String)}
-	 */
-	@Override
-	public String encodeUrl(String url) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -184,6 +168,11 @@ public class MimeResponseHttpServletAdapter extends MimeResponseWrapper implemen
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	public void setContentLengthLong(long l) {
+		throw new UnsupportedOperationException();
+	}
+
 	/**
 	 * See {@link HttpServletResponse#setDateHeader(String, long)}
 	 */
@@ -213,7 +202,6 @@ public class MimeResponseHttpServletAdapter extends MimeResponseWrapper implemen
 	 */
 	@Override
 	public void setLocale(Locale loc) {
-		// no-op: called by org.apache.myfaces.view.jsp.JspViewDeclarationLanguage.buildView(FacesContext,UIViewRoot)
 	}
 
 	/**
@@ -224,11 +212,4 @@ public class MimeResponseHttpServletAdapter extends MimeResponseWrapper implemen
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * See {@link HttpServletResponse#setStatus(int, String)}
-	 */
-	@Override
-	public void setStatus(int sc, String sm) {
-		throw new UnsupportedOperationException();
-	}
 }

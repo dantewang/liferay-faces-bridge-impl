@@ -17,14 +17,14 @@ package com.liferay.faces.bridge.servlet;
 
 import java.util.Enumeration;
 
-import javax.portlet.PortletContext;
-import javax.portlet.faces.BridgeFactoryFinder;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpSessionEvent;
-import javax.servlet.http.HttpSessionListener;
+import jakarta.portlet.PortletContext;
+import jakarta.portlet.faces.BridgeFactoryFinder;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletContextEvent;
+import jakarta.servlet.ServletContextListener;
+import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpSessionEvent;
+import jakarta.servlet.http.HttpSessionListener;
 
 import com.liferay.faces.bridge.bean.BeanManager;
 import com.liferay.faces.bridge.bean.BeanManagerFactory;
@@ -161,7 +161,7 @@ public class BridgeSessionListener implements HttpSessionListener, ServletContex
 
 						// If the current session attribute name is namespaced with the standard portlet prefix, then it
 						// is an attribute that was set using PortletSession.setAttribute(String, Object).
-						if ((attributeName != null) && attributeName.startsWith("javax.portlet.p.")) {
+						if ((attributeName != null) && attributeName.startsWith("jakarta.portlet.p.")) {
 							int pos = attributeName.indexOf("?");
 
 							if (pos > 0) {
