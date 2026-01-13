@@ -287,7 +287,8 @@
 			org.yaml.snakeyaml.*;resolution:=optional,\
 			reactor.*;resolution:=optional,\
 			rx.*;resolution:=optional,\
-			sun.reflect;resolution:=optional
+			sun.reflect;resolution:=optional,\
+			jakarta.enterprise.concurrent;resolution:=optional,\
 		</osgi.import.package.spring>
 		<osgi.require.capability />
 		<!-- Specifies that JSP capabilities are required so that a WAB can resolve. -->
