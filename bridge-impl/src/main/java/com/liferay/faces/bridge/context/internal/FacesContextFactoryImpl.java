@@ -32,7 +32,7 @@ import jakarta.servlet.ServletContext;
 public class FacesContextFactoryImpl extends FacesContextFactoryCompatImpl {
 
 	// Private Data Members
-	private FacesContextFactory wrappedFacesContextFactory;
+	private final FacesContextFactory wrappedFacesContextFactory;
 
 	public FacesContextFactoryImpl(FacesContextFactory facesContextFactory) {
 		wrappedFacesContextFactory = facesContextFactory;
@@ -44,14 +44,14 @@ public class FacesContextFactoryImpl extends FacesContextFactoryCompatImpl {
 
 		// If this is a request coming from the portlet container, then return an instance of FacesContext that is
 		// compatible with the portlet lifecycle.
-		if ((context != null) && (context instanceof PortletContext)) {
+		if ((context instanceof PortletContext)) {
 
 			return getFacesContext((PortletContext) context, (PortletRequest) request, (PortletResponse) response,
 					lifecycle);
 		}
 
 		// Otherwise, if the specified context is a ServletContext, then it is possible that the session is expiring.
-		else if ((context != null) && (context instanceof ServletContext)) {
+		else if ((context instanceof ServletContext)) {
 
 			// If the session is expiring, then return an instance of FacesContext that can function in a limited
 			// manner during session expiration.
@@ -69,7 +69,7 @@ public class FacesContextFactoryImpl extends FacesContextFactoryCompatImpl {
 
 			// NOTE: BridgeSessionListener creates classes named HttpServletRequestExpirationImpl and
 			// HttpServletResponseExpirationImpl.
-			if ((requestFQCN.length() == 0) || (responseFQCN.length() == 0) || requestFQCN.contains("expiration") ||
+			if ((requestFQCN.isEmpty()) || (responseFQCN.isEmpty()) || requestFQCN.contains("expiration") ||
 					responseFQCN.contains("expiration")) {
 
 				ExternalContext externalContext = new ExternalContextExpirationImpl((ServletContext) context);
