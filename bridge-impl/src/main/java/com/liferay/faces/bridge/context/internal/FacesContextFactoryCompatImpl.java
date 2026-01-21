@@ -15,6 +15,7 @@
  */
 package com.liferay.faces.bridge.context.internal;
 
+import com.liferay.faces.bridge.context.BridgeFacesContextFactory;
 import jakarta.faces.FacesException;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.context.FacesContextFactory;
@@ -22,6 +23,7 @@ import jakarta.faces.lifecycle.Lifecycle;
 import jakarta.portlet.PortletContext;
 import jakarta.portlet.PortletRequest;
 import jakarta.portlet.PortletResponse;
+import jakarta.portlet.faces.BridgeFactoryFinder;
 
 
 /**
@@ -36,6 +38,9 @@ public abstract class FacesContextFactoryCompatImpl extends FacesContextFactory 
 
 	public FacesContext getFacesContext(PortletContext portletContext, PortletRequest portletRequest,
 		PortletResponse portletResponse, Lifecycle lifecycle) throws FacesException {
-		return getWrapped().getFacesContext(portletContext, portletRequest, portletResponse, lifecycle);
+
+		BridgeFacesContextFactory bridgeFacesContextFactory = (BridgeFacesContextFactory) BridgeFactoryFinder.getFactory(portletContext, BridgeFacesContextFactory.class);
+
+		return bridgeFacesContextFactory.getFacesContext(getWrapped(), portletContext, portletRequest, portletResponse, lifecycle);
 	}
 }
