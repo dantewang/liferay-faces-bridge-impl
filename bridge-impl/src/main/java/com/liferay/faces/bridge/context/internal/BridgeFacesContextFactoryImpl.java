@@ -15,6 +15,7 @@ package com.liferay.faces.bridge.context.internal;
 
 import com.liferay.faces.bridge.context.BridgeFacesContextFactory;
 
+import com.liferay.faces.bridge.util.internal.TCCLUtil;
 import jakarta.faces.FacesException;
 import jakarta.faces.context.ExternalContext;
 import jakarta.faces.context.FacesContext;
@@ -80,7 +81,8 @@ public class BridgeFacesContextFactoryImpl extends BridgeFacesContextFactory {
 		HttpServletMappingHolder httpServletMappingHolder = new HttpServletMappingHolder();
 
 		return Proxy.newProxyInstance(
-			clazz.getClassLoader(), new Class<?>[]{clazz, HttpServletRequest.class, HttpServletMappingAware.class},
+			TCCLUtil.getThreadContextClassLoaderOrDefault(BridgeFacesContextFactoryImpl.class),
+			new Class<?>[]{clazz, HttpServletRequest.class, HttpServletMappingAware.class},
 			(proxy, method, args) -> {
 				if (Objects.equals(method.getName(), "setHttpServletMapping") && (args.length == 1)) {
 					httpServletMappingHolder.httpServletMapping = (HttpServletMapping)args[0];

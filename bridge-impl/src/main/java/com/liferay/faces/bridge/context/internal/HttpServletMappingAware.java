@@ -20,7 +20,7 @@ import jakarta.servlet.http.HttpServletMapping;
 /**
  * @author  Dante Wang
  */
-interface HttpServletMappingAware {
+public interface HttpServletMappingAware {
 
 	public void setHttpServletMapping(HttpServletMapping httpServletMapping);
 
