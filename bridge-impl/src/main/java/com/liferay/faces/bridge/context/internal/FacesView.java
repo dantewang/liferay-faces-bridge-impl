@@ -15,6 +15,7 @@
  */
 package com.liferay.faces.bridge.context.internal;
 
+import com.liferay.faces.util.config.ConfiguredServletMapping;
 import jakarta.portlet.faces.Bridge;
 
 
@@ -32,6 +33,8 @@ public interface FacesView {
 	 * @return  If the view is extension-mapped, returns the extension. Otherwise, returns <code>null</code>.
 	 */
 	String getExtension();
+
+	ConfiguredServletMapping getMatchedConfiguredServletMapping();
 
 	/**
 	 * Returns the query-string part of the to-view-id of the last navigation-rule that fired, or the query-string part

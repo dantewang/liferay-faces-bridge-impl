@@ -57,6 +57,7 @@ import jakarta.portlet.faces.BridgeFactoryFinder;
 import jakarta.portlet.faces.BridgeInvalidViewPathException;
 import jakarta.portlet.faces.BridgeURL;
 import jakarta.portlet.faces.GenericFacesPortlet;
+import jakarta.servlet.http.HttpServletMapping;
 import jakarta.servlet.http.HttpServletResponse;
 
 import com.liferay.faces.bridge.application.internal.BridgeNavigationUtil;
@@ -81,6 +82,7 @@ import com.liferay.faces.util.product.Product;
 import com.liferay.faces.util.product.ProductFactory;
 import com.liferay.faces.util.render.FacesURLEncoder;
 import com.liferay.faces.util.render.FacesURLEncoderFactory;
+import jakarta.servlet.http.MappingMatch;
 
 
 /**
@@ -953,7 +955,7 @@ public class ExternalContextImpl extends ExternalContextCompat_Portlet3_Impl {
 	@Override
 	public void setRequest(Object request) {
 
-		if ((request != null) && (request instanceof PortletRequest)) {
+		if ((request instanceof PortletRequest)) {
 
 			this.portletRequest = (PortletRequest) request;
 			this.requestParameterMap = null;
@@ -961,6 +963,59 @@ public class ExternalContextImpl extends ExternalContextCompat_Portlet3_Impl {
 			this.requestHeaderMap = null;
 			this.requestHeaderValuesMap = null;
 			preInitializeObjects();
+
+			if (request instanceof HttpServletMappingAware httpServletMappingAware) {
+				ConfiguredServletMapping configuredServletMapping = getFacesView().getMatchedConfiguredServletMapping();
+
+				if (configuredServletMapping != null) {
+					httpServletMappingAware.setHttpServletMapping(
+						new HttpServletMapping() {
+							@Override
+							public String getMatchValue() {
+								return "";
+							}
+
+							@Override
+							public String getPattern() {
+								return configuredServletMapping.getUrlPattern();
+							}
+
+							@Override
+							public String getServletName() {
+								return configuredServletMapping.getServletName();
+							}
+
+							@Override
+							public MappingMatch getMappingMatch() {
+								return configuredServletMapping.isExtensionMapped() ? MappingMatch.EXTENSION : MappingMatch.PATH;
+							}
+						});
+				}
+				else {
+					httpServletMappingAware.setHttpServletMapping(
+						new HttpServletMapping() {
+							@Override
+							public String getMatchValue() {
+								return "";
+							}
+
+							@Override
+							public String getPattern() {
+								return facesView.getExtension();
+							}
+
+							@Override
+							public String getServletName() {
+								return "";
+							}
+
+							@Override
+							public MappingMatch getMappingMatch() {
+								return MappingMatch.EXTENSION;
+							}
+						});
+				}
+			}
 		}
 		else {
 			throw new IllegalArgumentException("Must be an instance of jakarta.portlet.PortletRequest");

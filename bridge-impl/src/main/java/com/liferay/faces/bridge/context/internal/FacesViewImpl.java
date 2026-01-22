@@ -34,9 +34,10 @@ public class FacesViewImpl implements FacesView {
 	private String viewId;
 	private String extension;
 	private boolean extensionMapped;
-	private String navigationQueryString;
+	private final String navigationQueryString;
 	private String servletPath;
 	private boolean pathMapped;
+	private ConfiguredServletMapping matchedConfiguredServletMapping;
 
 	public FacesViewImpl(String viewId, List<String> configuredExtensions,
 		List<ConfiguredServletMapping> configuredFacesServletMappings) {
@@ -61,6 +62,7 @@ public class FacesViewImpl implements FacesView {
 					if (facesServletMapping.isMatch(viewId)) {
 						this.servletPath = facesServletMapping.getServletPath();
 						this.pathMapped = true;
+						this.matchedConfiguredServletMapping = facesServletMapping;
 
 						break;
 					}
@@ -91,6 +93,7 @@ public class FacesViewImpl implements FacesView {
 
 						this.extension = explicitFacesServletMapping.getExtension();
 						this.extensionMapped = true;
+						this.matchedConfiguredServletMapping = explicitFacesServletMapping;
 					}
 
 					// Otherwise, determine if the viewId matches any of the IMPLICIT extension-mapped servlet-mappings.
@@ -103,6 +106,7 @@ public class FacesViewImpl implements FacesView {
 
 								this.extension = facesServletMapping.getExtension();
 								this.extensionMapped = true;
+								this.matchedConfiguredServletMapping = facesServletMapping;
 
 								// As required by Section 6.1.3.1 of the Spec for
 								// ExternalContext.getRequestServletMapping(), replace the extension of the viewId with
@@ -133,6 +137,7 @@ public class FacesViewImpl implements FacesView {
 
 							this.extension = facesServletMapping.getExtension();
 							this.extensionMapped = true;
+							this.matchedConfiguredServletMapping = facesServletMapping;
 
 							break;
 						}
@@ -171,6 +176,11 @@ public class FacesViewImpl implements FacesView {
 	@Override
 	public String getExtension() {
 		return extension;
+	}
+
+	@Override
+	public ConfiguredServletMapping getMatchedConfiguredServletMapping() {
+		return matchedConfiguredServletMapping;
 	}
 
 	@Override
