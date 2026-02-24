@@ -30,7 +30,7 @@ import com.liferay.portlet.faces.component.PortletNamespace;
  */
 
 //J-
-@FacesRenderer(componentFamily = PortletNamespace.COMPONENT_FAMILY, rendererType = "jakarta.portlet.faces.Namespace")
+@FacesRenderer(componentFamily = PortletNamespace.COMPONENT_FAMILY, rendererType = "com.liferay.portlet.faces.Namespace")
 //J+
 public class NamespaceRenderer extends NamespaceRendererBase {
 

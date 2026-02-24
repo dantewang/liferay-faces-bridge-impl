@@ -29,7 +29,7 @@ import com.liferay.portlet.faces.component.PortletActionURL;
  */
 
 //J-
-@FacesRenderer(componentFamily = PortletActionURL.COMPONENT_FAMILY, rendererType = "jakarta.portlet.faces.ActionURL")
+@FacesRenderer(componentFamily = PortletActionURL.COMPONENT_FAMILY, rendererType = "com.liferay.portlet.faces.ActionURL")
 //J+
 public class ActionURLRenderer extends ActionURLRendererCompat {
 

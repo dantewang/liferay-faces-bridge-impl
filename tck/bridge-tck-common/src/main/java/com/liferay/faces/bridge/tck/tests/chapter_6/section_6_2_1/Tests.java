@@ -64,13 +64,13 @@ public class Tests {
 
 		if (uiViewRoot.getClass().getAnnotation(PortletNamingContainer.class) != null) {
 			testBean.setTestResult(true,
-				"UIViewRoot is correctly annotated with jakarta.portlet.faces.annotation.PortletNamingContainer.");
+				"UIViewRoot is correctly annotated with com.liferay.portlet.faces.annotation.PortletNamingContainer.");
 
 			return Constants.TEST_SUCCESS;
 		}
 		else {
 			testBean.setTestResult(false,
-				"UIViewRoot is not annotated with jakarta.portlet.faces.annotation.PortletNamingContainer.");
+				"UIViewRoot is not annotated with com.liferay.portlet.faces.annotation.PortletNamingContainer.");
 
 			return Constants.TEST_FAILED;
 		}

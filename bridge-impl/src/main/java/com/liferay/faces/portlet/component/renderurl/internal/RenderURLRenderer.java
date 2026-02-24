@@ -27,7 +27,7 @@ import com.liferay.portlet.faces.component.PortletRenderURL;
  */
 
 //J-
-@FacesRenderer(componentFamily = PortletRenderURL.COMPONENT_FAMILY, rendererType = "jakarta.portlet.faces.RenderURL")
+@FacesRenderer(componentFamily = PortletRenderURL.COMPONENT_FAMILY, rendererType = "com.liferay.portlet.faces.RenderURL")
 //J+
 public class RenderURLRenderer extends RenderURLRendererCompat {
 

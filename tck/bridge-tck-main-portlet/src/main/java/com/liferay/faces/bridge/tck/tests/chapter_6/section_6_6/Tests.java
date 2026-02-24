@@ -107,7 +107,7 @@ public class Tests {
 		}
 		else {
 			testBean.setTestResult(false,
-				"UIViewRoot is not annotated with jakarta.portlet.faces.annotation.PortletNamingContainer.");
+				"UIViewRoot is not annotated with com.liferay.portlet.faces.annotation.PortletNamingContainer.");
 
 			return Constants.TEST_FAILED;
 		}

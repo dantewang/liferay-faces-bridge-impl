@@ -96,24 +96,24 @@ public class Tests extends Object implements PhaseListener, BridgePublicRenderPa
 
 		testBean.setTestComplete(true);
 
-		String view = (String) sessionMap.get("jakarta.portlet.faces.viewIdHistory.view");
-		String edit = (String) sessionMap.get("jakarta.portlet.faces.viewIdHistory.edit");
-		String help = (String) sessionMap.get("jakarta.portlet.faces.viewIdHistory.help");
+		String view = (String) sessionMap.get("com.liferay.portlet.faces.viewIdHistory.view");
+		String edit = (String) sessionMap.get("com.liferay.portlet.faces.viewIdHistory.edit");
+		String help = (String) sessionMap.get("com.liferay.portlet.faces.viewIdHistory.help");
 
 		if (view == null) {
-			testBean.setTestResult(false, "jakarta.portlet.faces.viewIdHistory.view session attribute doesn't exist.");
+			testBean.setTestResult(false, "com.liferay.portlet.faces.viewIdHistory.view session attribute doesn't exist.");
 
 			return Constants.TEST_FAILED;
 		}
 
 		if (edit == null) {
-			testBean.setTestResult(false, "jakarta.portlet.faces.viewIdHistory.edit session attribute doesn't exist.");
+			testBean.setTestResult(false, "com.liferay.portlet.faces.viewIdHistory.edit session attribute doesn't exist.");
 
 			return Constants.TEST_FAILED;
 		}
 
 		if (help == null) {
-			testBean.setTestResult(false, "jakarta.portlet.faces.viewIdHistory.help session attribute doesn't exist.");
+			testBean.setTestResult(false, "com.liferay.portlet.faces.viewIdHistory.help session attribute doesn't exist.");
 
 			return Constants.TEST_FAILED;
 		}
@@ -122,7 +122,7 @@ public class Tests extends Object implements PhaseListener, BridgePublicRenderPa
 
 		if (!view.startsWith(defaultViewIdViewMode)) {
 			testBean.setTestResult(false,
-				"jakarta.portlet.faces.viewIdHistory.view contains unexpected value. Expected: " + defaultViewIdViewMode +
+				"com.liferay.portlet.faces.viewIdHistory.view contains unexpected value. Expected: " + defaultViewIdViewMode +
 				" but value was: " + view);
 
 			return Constants.TEST_FAILED;
@@ -132,7 +132,7 @@ public class Tests extends Object implements PhaseListener, BridgePublicRenderPa
 
 		if (!edit.startsWith(defaultViewIdEditMode)) {
 			testBean.setTestResult(false,
-				"jakarta.portlet.faces.viewIdHistory.edit contains unexpected value. Expected: " + defaultViewIdEditMode +
+				"com.liferay.portlet.faces.viewIdHistory.edit contains unexpected value. Expected: " + defaultViewIdEditMode +
 				" but value was: " + edit);
 
 			return Constants.TEST_FAILED;
@@ -142,7 +142,7 @@ public class Tests extends Object implements PhaseListener, BridgePublicRenderPa
 
 		if (!help.startsWith(defaultViewIdHelpMode)) {
 			testBean.setTestResult(false,
-				"jakarta.portlet.faces.viewIdHistory.help contains unexpected value. Expected: " + defaultViewIdHelpMode +
+				"com.liferay.portlet.faces.viewIdHistory.help contains unexpected value. Expected: " + defaultViewIdHelpMode +
 				" but value was: " + help);
 
 			return Constants.TEST_FAILED;
@@ -170,8 +170,8 @@ public class Tests extends Object implements PhaseListener, BridgePublicRenderPa
 		// In the action portion create/attach things to request scope that should either be preserved or
 		// are explicitly excluded -- test for presence/absence in render
 		String theView = facesContext.getViewRoot().getViewId();
-		String theHistoryView = (String) externalContext.getSessionMap().get("jakarta.portlet.faces.viewIdHistory.view");
-		String theHistoryEdit = (String) externalContext.getSessionMap().get("jakarta.portlet.faces.viewIdHistory.view");
+		String theHistoryView = (String) externalContext.getSessionMap().get("com.liferay.portlet.faces.viewIdHistory.view");
+		String theHistoryEdit = (String) externalContext.getSessionMap().get("com.liferay.portlet.faces.viewIdHistory.view");
 		String renderParam = (String) externalContext.getRequestParameterMap().get(
 				"com.liferay.faces.bridge.tck.testAttr");
 

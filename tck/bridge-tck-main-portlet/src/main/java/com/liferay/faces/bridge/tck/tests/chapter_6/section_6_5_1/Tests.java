@@ -392,7 +392,7 @@ public class Tests {
 					(PortletSession) externalContext.getSession(true));
 
 				// mutablePortletPreferencesValues: mutable Map of type Map<String,
-				// jakarta.portlet.faces.preference.Preference>.
+				// com.liferay.portlet.faces.preference.Preference>.
 				testMutablePortletPreferencesValues(testBean, facesResolver, facesContext,
 					"mutablePortletPreferencesValues", ((PortletRequest) request).getPreferences().getMap());
 
@@ -493,7 +493,7 @@ public class Tests {
 					(PortletSession) externalContext.getSession(true));
 
 				// mutablePortletPreferencesValues: mutable Map of type Map<String,
-				// jakarta.portlet.faces.preference.Preference>.
+				// com.liferay.portlet.faces.preference.Preference>.
 				testMutablePortletPreferencesValues(testBean, facesResolver, facesContext,
 					"mutablePortletPreferencesValues", ((PortletRequest) request).getPreferences().getMap());
 

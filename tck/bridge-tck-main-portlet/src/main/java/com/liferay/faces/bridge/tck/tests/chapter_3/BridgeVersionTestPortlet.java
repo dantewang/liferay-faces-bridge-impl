@@ -68,7 +68,7 @@ public class BridgeVersionTestPortlet extends GenericPortlet {
 		}
 		catch (ClassNotFoundException e) {
 			resultWriter.setStatus(BridgeTCKResultWriter.FAIL);
-			resultWriter.setDetail("jakarta.portlet.faces.Bridge class not found.");
+			resultWriter.setDetail("com.liferay.portlet.faces.Bridge class not found.");
 		}
 
 		responsePrintWriter.println(resultWriter.toString());

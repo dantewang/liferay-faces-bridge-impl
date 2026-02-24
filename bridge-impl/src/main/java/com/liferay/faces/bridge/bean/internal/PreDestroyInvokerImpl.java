@@ -101,7 +101,7 @@ public class PreDestroyInvokerImpl implements PreDestroyInvoker {
 					for (Annotation annotation : annotations) {
 
 						if (annotation.annotationType().getName().equals(
-									"jakarta.portlet.faces.annotation.BridgePreDestroy")) {
+									"com.liferay.portlet.faces.annotation.BridgePreDestroy")) {
 							return true;
 						}
 					}
