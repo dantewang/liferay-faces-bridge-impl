@@ -16,8 +16,8 @@
 package com.liferay.faces.bridge.tck.factories.filter;
 
 import jakarta.portlet.PortletConfig;
-import jakarta.portlet.faces.BridgePublicRenderParameterHandler;
-import jakarta.portlet.faces.BridgePublicRenderParameterHandlerFactory;
+import com.liferay.portlet.faces.BridgePublicRenderParameterHandler;
+import com.liferay.portlet.faces.BridgePublicRenderParameterHandlerFactory;
 
 
 /**

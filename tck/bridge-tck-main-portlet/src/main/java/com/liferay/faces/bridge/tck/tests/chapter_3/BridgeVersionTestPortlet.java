@@ -46,7 +46,7 @@ public class BridgeVersionTestPortlet extends GenericPortlet {
 
 		// Get the version info from the Bridge class
 		try {
-			Class c = Class.forName("jakarta.portlet.faces.Bridge");
+			Class c = Class.forName("com.liferay.portlet.faces.Bridge");
 
 			String name = c.getPackage().getSpecificationTitle();
 			String version = c.getPackage().getSpecificationVersion();

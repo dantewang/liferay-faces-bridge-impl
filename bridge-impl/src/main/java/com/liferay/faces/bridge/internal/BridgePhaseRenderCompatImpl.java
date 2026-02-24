@@ -23,11 +23,11 @@ import jakarta.faces.context.ExternalContext;
 import jakarta.portlet.PortletConfig;
 import jakarta.portlet.RenderRequest;
 import jakarta.portlet.RenderResponse;
-import jakarta.portlet.faces.Bridge;
-import jakarta.portlet.faces.BridgeConfig;
-import jakarta.portlet.faces.BridgeException;
-import jakarta.portlet.faces.filter.BridgePortletRequestFactory;
-import jakarta.portlet.faces.filter.BridgePortletResponseFactory;
+import com.liferay.portlet.faces.Bridge;
+import com.liferay.portlet.faces.BridgeConfig;
+import com.liferay.portlet.faces.BridgeException;
+import com.liferay.portlet.faces.filter.BridgePortletRequestFactory;
+import com.liferay.portlet.faces.filter.BridgePortletResponseFactory;
 
 import com.liferay.faces.bridge.context.internal.WriterOperation;
 

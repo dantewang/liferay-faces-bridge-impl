@@ -21,8 +21,8 @@ import jakarta.el.ELContext;
 import jakarta.el.ValueExpression;
 import jakarta.faces.context.FacesContext;
 import jakarta.portlet.Event;
-import jakarta.portlet.faces.BridgeEventHandler;
-import jakarta.portlet.faces.event.EventNavigationResult;
+import com.liferay.portlet.faces.BridgeEventHandler;
+import com.liferay.portlet.faces.event.EventNavigationResult;
 
 import com.liferay.faces.bridge.event.EventPayloadWrapper;
 import com.liferay.faces.demos.bean.BookingsModelBean;

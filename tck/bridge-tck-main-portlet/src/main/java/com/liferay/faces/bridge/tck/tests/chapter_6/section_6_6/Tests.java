@@ -19,10 +19,10 @@ import jakarta.faces.component.UIViewRoot;
 import jakarta.faces.context.ExternalContext;
 import jakarta.faces.context.FacesContext;
 import jakarta.portlet.MimeResponse;
-import jakarta.portlet.faces.Bridge;
-import jakarta.portlet.faces.BridgeUtil;
-import jakarta.portlet.faces.annotation.PortletNamingContainer;
-import jakarta.portlet.faces.component.PortletNamingContainerUIViewRoot;
+import com.liferay.portlet.faces.Bridge;
+import com.liferay.portlet.faces.BridgeUtil;
+import com.liferay.portlet.faces.annotation.PortletNamingContainer;
+import com.liferay.portlet.faces.component.PortletNamingContainerUIViewRoot;
 
 import com.liferay.faces.bridge.tck.annotation.BridgeTest;
 import com.liferay.faces.bridge.tck.beans.TestBean;

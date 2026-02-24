@@ -247,7 +247,7 @@
 	<portlet>
 		<portlet-name>FACES3175</portlet-name>
 		<display-name>FACES-3175</display-name>
-		<portlet-class>jakarta.portlet.faces.GenericFacesPortlet</portlet-class>
+		<portlet-class>com.liferay.portlet.faces.GenericFacesPortlet</portlet-class>
 		<init-param>
 			<name>jakarta.portlet.faces.defaultViewId.view</name>
 			<value>WEB-INF/views/FACES-3175/start.xhtml</value>
@@ -369,7 +369,7 @@
 	<portlet>
 		<portlet-name>FACES3404</portlet-name>
 		<display-name>FACES-3404</display-name>
-		<portlet-class>jakarta.portlet.faces.GenericFacesPortlet</portlet-class>
+		<portlet-class>com.liferay.portlet.faces.GenericFacesPortlet</portlet-class>
 		<init-param>
 			<name>jakarta.portlet.faces.defaultViewId.view</name>
 			<value>/WEB-INF/views/FACES-3404/start.xhtml</value>
@@ -403,7 +403,7 @@
 	<portlet>
 		<portlet-name>FACES3404friendlyURL</portlet-name>
 		<display-name>FACES-3404-friendlyURL</display-name>
-		<portlet-class>jakarta.portlet.faces.GenericFacesPortlet</portlet-class>
+		<portlet-class>com.liferay.portlet.faces.GenericFacesPortlet</portlet-class>
 		<init-param>
 			<name>jakarta.portlet.faces.defaultViewId.view</name>
 			<value>/WEB-INF/views/FACES-3404/start.xhtml</value>

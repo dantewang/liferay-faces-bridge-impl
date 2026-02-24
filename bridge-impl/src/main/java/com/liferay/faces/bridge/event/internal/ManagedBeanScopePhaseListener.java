@@ -26,10 +26,10 @@ import jakarta.faces.event.PhaseEvent;
 import jakarta.faces.event.PhaseId;
 import jakarta.faces.event.PhaseListener;
 import jakarta.portlet.PortletContext;
-import jakarta.portlet.faces.Bridge;
-import jakarta.portlet.faces.Bridge.PortletPhase;
-import jakarta.portlet.faces.BridgeFactoryFinder;
-import jakarta.portlet.faces.BridgeUtil;
+import com.liferay.portlet.faces.Bridge;
+import com.liferay.portlet.faces.Bridge.PortletPhase;
+import com.liferay.portlet.faces.BridgeFactoryFinder;
+import com.liferay.portlet.faces.BridgeUtil;
 
 import com.liferay.faces.bridge.bean.BeanManager;
 import com.liferay.faces.bridge.bean.BeanManagerFactory;

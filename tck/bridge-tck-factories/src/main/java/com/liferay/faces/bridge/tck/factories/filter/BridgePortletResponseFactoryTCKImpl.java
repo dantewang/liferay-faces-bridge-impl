@@ -26,8 +26,8 @@ import jakarta.portlet.RenderRequest;
 import jakarta.portlet.RenderResponse;
 import jakarta.portlet.ResourceRequest;
 import jakarta.portlet.ResourceResponse;
-import jakarta.portlet.faces.BridgeConfig;
-import jakarta.portlet.faces.filter.BridgePortletResponseFactory;
+import com.liferay.portlet.faces.BridgeConfig;
+import com.liferay.portlet.faces.filter.BridgePortletResponseFactory;
 
 
 /**

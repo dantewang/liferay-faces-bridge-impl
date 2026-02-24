@@ -17,9 +17,9 @@ package com.liferay.faces.bridge.tck.factories.filter;
 
 import jakarta.portlet.PortletConfig;
 import jakarta.portlet.PortletRequest;
-import jakarta.portlet.faces.BridgeConfig;
-import jakarta.portlet.faces.RequestAttributeInspector;
-import jakarta.portlet.faces.RequestAttributeInspectorFactory;
+import com.liferay.portlet.faces.BridgeConfig;
+import com.liferay.portlet.faces.RequestAttributeInspector;
+import com.liferay.portlet.faces.RequestAttributeInspectorFactory;
 
 
 /**

@@ -31,10 +31,10 @@ import jakarta.portlet.PortletMode;
 import jakarta.portlet.PortletRequest;
 import jakarta.portlet.PortletResponse;
 import jakarta.portlet.StateAwareResponse;
-import jakarta.portlet.faces.Bridge;
-import jakarta.portlet.faces.BridgeFactoryFinder;
-import jakarta.portlet.faces.BridgeURL;
-import jakarta.portlet.faces.BridgeURLFactory;
+import com.liferay.portlet.faces.Bridge;
+import com.liferay.portlet.faces.BridgeFactoryFinder;
+import com.liferay.portlet.faces.BridgeURL;
+import com.liferay.portlet.faces.BridgeURLFactory;
 
 import com.liferay.faces.bridge.util.internal.RequestMapUtil;
 import com.liferay.faces.bridge.util.internal.ViewUtil;

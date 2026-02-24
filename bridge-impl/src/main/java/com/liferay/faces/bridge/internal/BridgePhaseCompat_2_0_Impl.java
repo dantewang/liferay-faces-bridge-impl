@@ -28,9 +28,9 @@ import jakarta.faces.event.ExceptionQueuedEvent;
 import jakarta.faces.event.ExceptionQueuedEventContext;
 import jakarta.portlet.PortletConfig;
 import jakarta.portlet.PortletRequest;
-import jakarta.portlet.faces.BridgeConfig;
-import jakarta.portlet.faces.BridgeException;
-import jakarta.portlet.faces.BridgeInvalidViewPathException;
+import com.liferay.portlet.faces.BridgeConfig;
+import com.liferay.portlet.faces.BridgeException;
+import com.liferay.portlet.faces.BridgeInvalidViewPathException;
 
 import com.liferay.faces.bridge.renderkit.html_basic.internal.HeadManagedBean;
 

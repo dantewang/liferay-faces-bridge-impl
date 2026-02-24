@@ -31,9 +31,9 @@ import jakarta.portlet.PortletRequest;
 import jakarta.portlet.PortletResponse;
 import jakarta.portlet.PortletSession;
 import jakarta.portlet.StateAwareResponse;
-import jakarta.portlet.faces.Bridge;
-import jakarta.portlet.faces.BridgeConfig;
-import jakarta.portlet.faces.annotation.PortletNamingContainer;
+import com.liferay.portlet.faces.Bridge;
+import com.liferay.portlet.faces.BridgeConfig;
+import com.liferay.portlet.faces.annotation.PortletNamingContainer;
 
 import com.liferay.faces.bridge.context.internal.IncongruityContext;
 import com.liferay.faces.bridge.context.internal.IncongruityContextFactory;

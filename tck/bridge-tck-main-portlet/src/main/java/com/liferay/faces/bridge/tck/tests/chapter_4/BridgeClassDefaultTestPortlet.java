@@ -21,7 +21,7 @@ import java.io.PrintWriter;
 import jakarta.portlet.PortletException;
 import jakarta.portlet.RenderRequest;
 import jakarta.portlet.RenderResponse;
-import jakarta.portlet.faces.GenericFacesPortlet;
+import com.liferay.portlet.faces.GenericFacesPortlet;
 
 import com.liferay.faces.bridge.tck.common.util.BridgeTCKResultWriter;
 

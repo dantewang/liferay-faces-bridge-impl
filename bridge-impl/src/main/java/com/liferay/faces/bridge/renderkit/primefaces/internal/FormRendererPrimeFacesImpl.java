@@ -30,11 +30,11 @@ import jakarta.faces.event.ActionListener;
 import jakarta.faces.render.Renderer;
 import jakarta.faces.render.RendererWrapper;
 import jakarta.portlet.PortletContext;
-import jakarta.portlet.faces.Bridge;
-import jakarta.portlet.faces.BridgeException;
-import jakarta.portlet.faces.BridgeFactoryFinder;
-import jakarta.portlet.faces.BridgeURL;
-import jakarta.portlet.faces.BridgeURLFactory;
+import com.liferay.portlet.faces.Bridge;
+import com.liferay.portlet.faces.BridgeException;
+import com.liferay.portlet.faces.BridgeFactoryFinder;
+import com.liferay.portlet.faces.BridgeURL;
+import com.liferay.portlet.faces.BridgeURLFactory;
 
 import com.liferay.faces.bridge.internal.BridgeExt;
 import com.liferay.faces.bridge.renderkit.html_basic.internal.RenderKitBridgeImpl;

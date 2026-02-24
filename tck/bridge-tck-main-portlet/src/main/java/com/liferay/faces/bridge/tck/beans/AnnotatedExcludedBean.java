@@ -15,7 +15,7 @@
  */
 package com.liferay.faces.bridge.tck.beans;
 
-import jakarta.portlet.faces.annotation.ExcludeFromManagedRequestScope;
+import com.liferay.portlet.faces.annotation.ExcludeFromManagedRequestScope;
 
 
 /**

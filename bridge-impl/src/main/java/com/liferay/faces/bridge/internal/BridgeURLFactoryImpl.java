@@ -27,10 +27,10 @@ import jakarta.faces.context.FacesContext;
 import jakarta.faces.context.ResponseWriter;
 import jakarta.portlet.PortletConfig;
 import jakarta.portlet.PortletRequest;
-import jakarta.portlet.faces.BridgeConfig;
-import jakarta.portlet.faces.BridgeException;
-import jakarta.portlet.faces.BridgeURL;
-import jakarta.portlet.faces.BridgeURLFactory;
+import com.liferay.portlet.faces.BridgeConfig;
+import com.liferay.portlet.faces.BridgeException;
+import com.liferay.portlet.faces.BridgeURL;
+import com.liferay.portlet.faces.BridgeURLFactory;
 
 import com.liferay.faces.bridge.util.internal.RequestMapUtil;
 import com.liferay.faces.bridge.util.internal.URLUtil;

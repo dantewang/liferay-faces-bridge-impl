@@ -18,7 +18,7 @@ package com.liferay.faces.bridge.bean.internal;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
-import jakarta.portlet.faces.annotation.BridgePreDestroy;
+import com.liferay.portlet.faces.annotation.BridgePreDestroy;
 
 import com.liferay.faces.bridge.bean.PreDestroyInvoker;
 import com.liferay.faces.util.logging.Logger;
