@@ -255,7 +255,7 @@
 		<liferay.version>7.4.3.ga102</liferay.version>
 		<liferay.version.dtd>7.2</liferay.version.dtd>
 		<liferay.version.major>7</liferay.version.major>
-		<mojarra.version>2.3.21.LIFERAY-PATCHED-2.JAKARTA-LIFERAY-PATCHED-1</mojarra.version>
+		<mojarra.version>2.3.21.LIFERAY-PATCHED-4.JAKARTA-LIFERAY-PATCHED-1</mojarra.version>
 		<pluto.deploy.dir>${pluto.tomcat.dir}/webapps</pluto.deploy.dir>
 		<pluto.home>${env.PORTALS_HOME}/liferay.com/pluto-${pluto.version}-jsf-${faces.spec.version}</pluto.home>
 		<pluto.tomcat.dir>${pluto.home}/tomcat-${pluto.tomcat.version}</pluto.tomcat.dir>
@@ -268,7 +268,7 @@
 		<portlet.api.version>${portlet.spec.version}.0</portlet.api.version>
 		<portlet.spec.version>4.0</portlet.spec.version>
 		<portlet.war.deployment.type>deploy</portlet.war.deployment.type>
-		<primefaces.version>15.0.6.LIFERAY-PATCHED-1</primefaces.version>
+		<primefaces.version>15.0.6.LIFERAY-PATCHED-3.JAKARTA-LIFERAY-PATCHED-1</primefaces.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<project.stage>Production</project.stage>
